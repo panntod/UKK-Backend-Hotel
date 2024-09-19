@@ -5,12 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models.kamar, {
-        foreignKey: `id_tipe_kamar`,
-        as: "kamars",
+        foreignKey: "id_tipe_kamar",
       });
       this.hasMany(models.pemesanan, {
-        foreignKey: `id_tipe_kamar`,
-        as: `pemesanans`,
+        foreignKey: "id_tipe_kamar",
       });
     }
   }

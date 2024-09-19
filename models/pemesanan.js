@@ -7,14 +7,14 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id_pemesanan",
         as: "details_of_pemesanan",
       });
-      this.belongsTo(models.user);
-      this.belongsTo(models.tipe_kamar, { foreignKey: 'id_tipe_kamar' });
+      this.belongsTo(models.user, { foreignKey: "id_user" });
+      this.belongsTo(models.tipe_kamar, { foreignKey: "id_tipe_kamar" });
     }
   }
 
   pemesanan.init(
     {
-      nomor_pemesanan: DataTypes.INTEGER,
+      nomor_pemesanan: DataTypes.STRING,
       nama_pemesanan: DataTypes.STRING,
       email_pemesanan: DataTypes.STRING,
       tgl_pemesanan: DataTypes.DATE,
